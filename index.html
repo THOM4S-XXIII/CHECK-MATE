@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CHECK✅MATE - En Digital Gjøremålsliste</title>
+    <!-- Google Fonts: håndskrift, tydelig og ekstra tydelig font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Quicksand:wght@400;700&family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="pure-center">
+          <h1>CHECK<span>✅</span>MATE</h1>
+          <p class="tagline">En Digital Gjøremålsliste</p>
+        </div>
+        <div class="top-bar">
+          <!-- Lys/mørk modus knapp  -->
+          <button id="toggle-mode" title="Bytt mellom lys/mørk modus">
+            🌙 / ☀️
+          </button>
+          <!-- Font-velgerknapp -->
+          <button id="toggle-font" title="Bytt skrifttype (håndskrift/tydelig)">
+            A🖋️/A🅰️
+          </button>
+        </div>
+      </header>
+      <nav>
+        <ul id="category-tabs"></ul>
+        <button id="add-category">+ Ny kategori</button>
+      </nav>
+      <main>
+        <form id="todo-form">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Skriv gjøremål her"
+            required
+          />
+          <button type="submit" title="Legg til">+</button>
+        </form>
+        <ul id="todo-list"></ul>
+      </main>
+      <footer>
+        <small>
+          CHECK✅MATE <br />
+          Laget av
+          <a href="https://github.com/THOM4S-XXIII" target="_blank"
+            >THOM4S-XXIII</a
+          >
+          &copy; 2025
+        </small>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

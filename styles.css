@@ -1,0 +1,385 @@
+/* GLOBALE INNSTILLINGER */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: #edecea;
+  color: #44433e;
+  font-family: 'Quicksand', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  transition: background 0.2s;
+}
+body.dark {
+  background: #0a1b24;
+  color: #f5e6cb;
+}
+body.font-clear .todo-item,
+body.font-clear .todo-text {
+  font-family: 'Montserrat', Arial, sans-serif !important;
+}
+body.font-clear .container {
+  font-family: 'Quicksand', Arial, sans-serif;
+}
+
+/* HOVEDBOKS / CONTAINER */
+.container {
+  width: 92vw;
+  max-width: 670px;
+  min-height: 85vh;
+  background: #efdfb4;
+  border-radius: 26px;
+  box-shadow: 0 10px 44px #cbd4f933, 0 2px 12px #7dc57922;
+  padding: 2.2em 1.5em 2em 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  transition: background 0.2s, color 0.2s;
+}
+body.dark .container {
+  background: #121923;
+  color: #f5e6cb;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.pure-center {
+  width: 100%;
+}
+header h1,
+.tagline {
+  text-align: center;
+  width: 100%;
+}
+header h1 {
+  font-family: 'Caveat', cursive;
+  color: #7dc579;
+  font-size: 2.6em;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto 0.25em auto;
+  text-shadow: 0 2px 16px #7dc57988, 0 2px 18px #45f0a880;
+}
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+#toggle-mode {
+  font-size: 1.4em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #44433e;
+  transition: color 0.2s;
+}
+body.dark #toggle-mode {
+  color: #f5e6cb;
+}
+#toggle-font {
+  font-size: 1.3em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #44433e;
+  margin-left: 0.2em;
+  transition: color 0.2s;
+}
+body.dark #toggle-font {
+  color: #f5e6cb;
+}
+.tagline {
+  display: block;
+  text-align: center;
+  font-size: 1.13em;
+  margin: 0 0 1em 0;
+  color: #268b2d;
+  font-family: 'Caveat', cursive, 'Quicksand', Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* NAVIGASJON */
+nav {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+/* KATEGORIFANER */
+#category-tabs {
+  display: flex;
+  gap: 0.3em;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+#category-tabs li {
+  list-style: none;
+  background: #fad2e6;
+  color: #44433e;
+  padding: 0.3em 1.1em;
+  border-radius: 17px 17px 0 0;
+  margin-right: 0.09em;
+  font-family: 'Quicksand', Arial, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+  transition: background 0.15s, color 0.15s;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#category-tabs li.active {
+  background: #7dc579;
+  color: #fff;
+}
+body.dark #category-tabs li {
+  background: #243649;
+  color: #fff;
+}
+body.dark #category-tabs li.active {
+  background: #7dc579;
+  color: #0a1b24;
+}
+.tab-delete {
+  background: none;
+  border: none;
+  color: #e97a7a;
+  font-size: 1.08em;
+  margin-left: 0.2em;
+  cursor: pointer;
+  padding: 0.07em 0.18em;
+  border-radius: 7px;
+  line-height: 1;
+  font-size: 0.98em;
+}
+.tab-delete:hover {
+  background: #e97a7a;
+  color: #fff;
+}
+#add-category {
+  border: none;
+  background: #cbd4f9;
+  color: #44433e;
+  font-size: 1em;
+  border-radius: 12px;
+  padding: 0.18em 1em;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  transition: background 0.16s;
+}
+#add-category:hover {
+  background: #7dc579;
+  color: #fff;
+}
+body.dark #add-category {
+  background: #35384a;
+  color: #fff;
+}
+
+/* INNSKRIVINGSFELT FOR GJØREMÅL (SKJEMA) */
+form {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+  justify-content: center;
+}
+input[type='text'] {
+  flex: 1;
+  padding: 0.95em 1.1em;
+  border: 1.8px solid #cbd4f9;
+  border-radius: 13px;
+  font-size: 1.13em;
+  background: #f9f5a8;
+  color: #44433e;
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-weight: 400;
+  transition: border 0.18s, background 0.18s, box-shadow 0.17s;
+  box-shadow: 0 2px 10px #cbcdf980;
+}
+input[type='text']:focus {
+  border: 2px solid #7dc579;
+  outline: none;
+  background: #fffdf8;
+  box-shadow: 0 2.5px 18px #cbd4f9aa;
+}
+
+/* KNAPPER */
+button[type='submit'] {
+  padding: 0.55em 1.12em;
+  font-size: 1.4em;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #7dc579 60%, #fad2e6 120%);
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 0 4px 13px #7dc57933;
+  cursor: pointer;
+  transition: background 0.23s, transform 0.15s;
+  font-family: 'Quicksand', Arial, sans-serif;
+}
+button[type='submit']:active {
+  background: linear-gradient(135deg, #fad2e6, #7dc579);
+  transform: scale(1.08);
+}
+
+/* GJØREMÅLSLISTE (TODO-LIST) */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-height: 1em;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffdf8;
+  margin-bottom: 1em;
+  padding: 1.1em 1em;
+  border-radius: 15px;
+  box-shadow: 0 2px 14px #cbd4f933;
+  font-size: 1.13em;
+  gap: 0.55em;
+  transition: background 0.16s, box-shadow 0.18s, color 0.2s;
+  border: 1.3px solid #cbd4f9;
+  font-family: 'Caveat', cursive;
+}
+.todo-item.done {
+  background: #f9f5a8;
+  border-color: #7dc579;
+  box-shadow: 0 7px 24px #7dc57940;
+  filter: brightness(1.06);
+  color: #7dc579;
+}
+body.dark .todo-item {
+  background: #161720;
+  color: #fff;
+  border: 1.3px solid #474a4e;
+}
+body.dark .todo-item.done {
+  background: #23443a;
+  filter: brightness(1.07);
+  border-color: #7dc579;
+  color: #7dc579;
+}
+.todo-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  flex: 1;
+}
+.todo-text {
+  font-size: 1.16em;
+  color: inherit;
+  font-family: 'Caveat', cursive;
+  font-weight: 600;
+  user-select: text;
+  transition: color 0.17s, text-shadow 0.18s;
+}
+.todo-text.done {
+  text-decoration: line-through;
+  color: #7dc579;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 0 0 18px #32ff84, 0 0 17px #85ffb7;
+}
+
+/* CHECKMARK-KNAPP */
+.checkmark-btn {
+  background: none;
+  border: 2.7px solid #cbd4f9;
+  border-radius: 50%;
+  width: 2.2em;
+  height: 2.2em;
+  cursor: pointer;
+  transition: border 0.13s, background 0.16s, box-shadow 0.13s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.12em;
+  box-shadow: 0 1px 10px 0 #cbd4f933;
+}
+.checkmark-btn.checked {
+  border: 2.7px solid #10e27b;
+  background: #7dc57933;
+  box-shadow: 0 3px 16px #30ff85a0, 0 2px 19px #32ff8490;
+}
+.checkmark-btn .checkmark {
+  font-size: 1.34em;
+  transition: color 0.13s, text-shadow 0.12s;
+}
+.checkmark-btn:not(.checked) .checkmark {
+  color: transparent;
+  text-shadow: none;
+}
+.checkmark-btn.checked .checkmark {
+  color: #11be60;
+  text-shadow: 0 0 18px #32ff84c5, 0 2px 12px #6affae;
+}
+/* SLETT-KNAPP */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #e97a7a;
+  margin-left: 0.7em;
+  font-size: 1.16em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color 0.11s, background 0.11s, transform 0.11s;
+  border-radius: 50%;
+  padding: 0.23em 0.37em 0.2em 0.37em;
+}
+.delete-btn:disabled {
+  color: #fad2e6;
+  background: #fffdf8;
+  cursor: not-allowed;
+}
+.delete-btn:hover:not(:disabled) {
+  color: #fffdf8;
+  background: #e97a7a;
+  transform: scale(1.08);
+}
+
+/* FOOTER */
+footer {
+  margin-top: 1.1em;
+  text-align: center;
+  color: #268b2d;
+  opacity: 0.95;
+  font-size: 1.3em;
+  font-family: 'Quicksand', Arial, sans-serif;
+}
+
+/* REKKEFØLGE SORTERING FOR GJØREMÅL (DRAG & DROP) */
+.todo-item.dragging {
+  opacity: 0.5;
+  background: #ffeebb !important;
+}
+.todo-item.drag-over {
+  border: 2px dashed #7dc579;
+}
+
+/* MOBILVISNING / RESPONSIVT DESIGN */
+@media (max-width: 600px) {
+  .container {
+    max-width: 99vw;
+    padding: 0.7em;
+  }
+  header h1 {
+    font-size: 1.3em;
+  }
+  .todo-item {
+    font-size: 1em;
+  }
+}
